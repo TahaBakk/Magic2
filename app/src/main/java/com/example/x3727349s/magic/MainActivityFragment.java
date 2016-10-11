@@ -94,8 +94,9 @@ public class MainActivityFragment extends Fragment {
         menosVeneno1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                contadorVeneno1--;
-                textView1.setText(contadorVida1+"/"+contadorVeneno1);
+                if(contadorVeneno1>0){
+                    contadorVeneno1--;
+                    textView1.setText(contadorVida1+"/"+contadorVeneno1);}
             }
         });
 
@@ -103,8 +104,9 @@ public class MainActivityFragment extends Fragment {
         menosVeneno2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                contadorVeneno2--;
-                textView2.setText(contadorVida2+"/"+contadorVeneno2);
+                if(contadorVeneno2>0){
+                    contadorVeneno2--;
+                    textView2.setText(contadorVida2+"/"+contadorVeneno2);}
             }
         });
 
