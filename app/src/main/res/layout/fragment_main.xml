@@ -33,13 +33,13 @@
         app:layout_constraintBottom_toTopOf="@+id/quitarVida1" />
 
     <android.support.constraint.Guideline
-        android:layout_width="384dp"
-        android:layout_height="wrap_content"
         android:id="@+id/guideline"
-        app:layout_constraintGuide_begin="225dp"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteY="225dp"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteY="229dp"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_height="0dp"
+        android:layout_width="0dp"
+        app:layout_constraintGuide_percent="0.50329673" />
 
 
     <Button
@@ -173,7 +173,7 @@
 
     <Button
         android:text="DOWN"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:id="@+id/quitarVida2"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
