@@ -36,10 +36,13 @@ public class MainActivityFragment extends Fragment {
         inflater.inflate(R.menu.menu_main_fragment, menu);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+        setHasOptionsMenu(true);
 
         textView1 = (TextView) view.findViewById(R.id.textView1);
         textView2 = (TextView) view.findViewById(R.id.textView2);
