@@ -46,10 +46,20 @@ public class MainActivityFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
+
+        if(savedInstanceState != null){
+            contadorVida1 = savedInstanceState.getInt("Vida1");
+            contadorVida2 = savedInstanceState.getInt("Vida2");
+            contadorVeneno1 = savedInstanceState.getInt("Veneno1");
+            contadorVeneno2 = savedInstanceState.getInt("Veneno2");
+
+        }
 
         textView1 = (TextView) view.findViewById(R.id.textView1);
         textView2 = (TextView) view.findViewById(R.id.textView2);
