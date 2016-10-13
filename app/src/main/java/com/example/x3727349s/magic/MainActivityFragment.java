@@ -1,16 +1,20 @@
 package com.example.x3727349s.magic;
 
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.zip.Inflater;
+
+import static android.R.attr.id;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -27,22 +31,22 @@ public class MainActivityFragment extends Fragment {
     private int contadorVida1=20, contadorVeneno1=0;
     private int contadorVida2=20, contadorVeneno2=0;
 
+
+    private Menu btReset;
+
     public MainActivityFragment() {
     }
-    //esto es para inflar el fragment (lo hacemos para el boton reset)
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.menu_main_fragment, menu);
-    }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
-
-        setHasOptionsMenu(true);
 
         textView1 = (TextView) view.findViewById(R.id.textView1);
         textView2 = (TextView) view.findViewById(R.id.textView2);
@@ -145,8 +149,40 @@ public class MainActivityFragment extends Fragment {
             }
         });
 
-
+        // btReset = (Menu) view.findViewById(R.id.@+id/mnReset);
 
         return view;
+    }
+
+    /* Link de como hacerlo en el moodle */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    //esto es para inflar el fragment (lo hacemos para el boton reset)
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.menu_main, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.reset) {
+            reset();
+            return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void reset() {
+        contadorVida1=20;
+        contadorVeneno1=0;
+        contadorVida2=20;
+        contadorVeneno2=0;
+        textView1.setText(contadorVida1+"/"+contadorVeneno1);
+        textView2.setText(contadorVida2+"/"+contadorVeneno2);
     }
 }

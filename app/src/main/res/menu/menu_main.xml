@@ -3,8 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.x3727349s.magic.MainActivity">
     <item
+        android:title="Reset"
+        android:orderInCategory="102"
+        android:id="@+id/reset"
+        android:enabled="true"
+        android:visible="true"
+        app:showAsAction="always"
+        android:checkable="false" />
+    <!--<item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="103"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
 </menu>
