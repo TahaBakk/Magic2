@@ -1,6 +1,7 @@
 package com.example.x3727349s.magic;
 
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -184,5 +185,13 @@ public class MainActivityFragment extends Fragment {
         contadorVeneno2=0;
         textView1.setText(contadorVida1+"/"+contadorVeneno1);
         textView2.setText(contadorVida2+"/"+contadorVeneno2);
+
+        Snackbar.make(getView(), "se reinicio los contadores", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
     }
+
+
+
+
+
 }
