@@ -33,10 +33,12 @@ public class MainActivityFragment extends Fragment {
     private int contadorVida2=20, contadorVeneno2=0;
 
 
+
     private Menu btReset;
 
     public MainActivityFragment() {
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -158,6 +160,12 @@ public class MainActivityFragment extends Fragment {
     /* Link de como hacerlo en el moodle */
     @Override
     public void onSaveInstanceState(Bundle outState) {
+
+        outState.putInt("Vida1", contadorVida1);
+        outState.putInt("Vida2", contadorVida2);
+        outState.putInt("Veneno1", contadorVeneno1);
+        outState.putInt("Veneno2", contadorVeneno2);
+
         super.onSaveInstanceState(outState);
     }
 
