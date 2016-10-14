@@ -53,16 +53,21 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
+        textView1 = (TextView) view.findViewById(R.id.textView1);
+        textView2 = (TextView) view.findViewById(R.id.textView2);
+
+        //Aqui l'estem dient que si el savedInstanceState si es null que faci el següent
+        //lo que esta en comilles es el codi que hem posat en el metode onSaveInstanceState
         if(savedInstanceState != null){
             contadorVida1 = savedInstanceState.getInt("Vida1");
             contadorVida2 = savedInstanceState.getInt("Vida2");
             contadorVeneno1 = savedInstanceState.getInt("Veneno1");
             contadorVeneno2 = savedInstanceState.getInt("Veneno2");
+            textView2.setText(contadorVida2+"/"+contadorVeneno2);
+            textView1.setText(contadorVida1+"/"+contadorVeneno1);
+
 
         }
-
-        textView1 = (TextView) view.findViewById(R.id.textView1);
-        textView2 = (TextView) view.findViewById(R.id.textView2);
 
         /*Des d'aqui estem fent que si li donem click al boto fagin una funció*/
 
@@ -167,7 +172,7 @@ public class MainActivityFragment extends Fragment {
         return view;
     }
 
-    /* Link de como hacerlo en el moodle */
+    //Això és per guardar la variables i el que este entre comilles es el codi que l'hem posat
     @Override
     public void onSaveInstanceState(Bundle outState) {
 
@@ -185,7 +190,7 @@ public class MainActivityFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
         inflater.inflate(R.menu.menu_main, menu);
     }
-
+    //Li diem si el id es igual al reset que cridi el metode "reset"
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -196,6 +201,7 @@ public class MainActivityFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
+    //Aqui li diem que posi el contador per defecte i que l'imprimeixi
     private void reset() {
         contadorVida1=20;
         contadorVeneno1=0;
