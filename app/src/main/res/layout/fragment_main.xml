@@ -135,7 +135,7 @@
         app:layout_constraintLeft_toRightOf="@+id/masVida2"
         app:layout_constraintRight_toLeftOf="@+id/menosVida2"
         app:layout_constraintBottom_toBottomOf="@+id/menosVeneno2"
-        android:textSize="75sp"
+        android:textSize="50sp"
         android:textColor="@android:color/background_dark"
         android:textAlignment="center"
         app:layout_constraintTop_toTopOf="@+id/menosVida2" />
@@ -151,11 +151,14 @@
         android:layout_marginStart="8dp"
         app:layout_constraintLeft_toRightOf="@+id/masVida1"
         android:layout_marginLeft="8dp"
-        android:textSize="75sp"
+        android:textSize="45sp"
         android:textColor="@android:color/background_dark"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/masVida1"
-        app:layout_constraintTop_toTopOf="@+id/masVeneno1" />
+        app:layout_constraintTop_toTopOf="@+id/masVeneno1"
+        android:paddingLeft="8dp"
+        android:paddingEnd="8dp"
+        android:paddingRight="8dp" />
 
     <Button
         android:layout_width="0dp"
